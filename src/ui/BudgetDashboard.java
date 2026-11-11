@@ -31,16 +31,16 @@ public class BudgetDashboard extends JFrame {
     private JTextField amountField;
     private JComboBox<String> categoryBox;
 
-    // --- DRACULA VIOLET PALETTE ---
-    private static final Color BG_DARK = new Color(40, 42, 54);          // Deep Slate Violet
-    private static final Color CARD_BG = new Color(52, 55, 70);          // Elevated Card Surface
-    private static final Color INPUT_BG = new Color(33, 34, 44);         // Dark Input Well
-    private static final Color TEXT_MAIN = new Color(248, 248, 242);     // Crisp White Text
-    private static final Color TEXT_MUTED = new Color(98, 114, 164);     // Muted Lavender Gray
-    private static final Color ACCENT_CYAN = new Color(189, 147, 249);   // Pastel Purple Accent
-    private static final Color ACCENT_PINK = new Color(255, 121, 198);   // Soft Pink Alert
-    private static final Color ACCENT_GREEN = new Color(80, 250, 123);    // Mint Green Safe
-    private static final Color BORDER_COLOR = new Color(68, 71, 90);     // Sub-Border Line
+    // --- TOKYO NIGHT PALETTE ---
+    private static final Color BG_DARK = new Color(26, 27, 38);          // Deep Night Blue
+    private static final Color CARD_BG = new Color(36, 40, 59);          // Night Surface
+    private static final Color INPUT_BG = new Color(22, 22, 30);         // Inset Dark Well
+    private static final Color TEXT_MAIN = new Color(192, 202, 245);     // Off-White Blue
+    private static final Color TEXT_MUTED = new Color(86, 95, 137);      // Muted Night Slate
+    private static final Color ACCENT_CYAN = new Color(122, 162, 247);   // Soft Pastel Blue
+    private static final Color ACCENT_PINK = new Color(247, 118, 142);   // Coral Pink Alert
+    private static final Color ACCENT_GREEN = new Color(158, 206, 106);  // Pistachio Green
+    private static final Color BORDER_COLOR = new Color(65, 72, 104);    // Night Border
 
     public BudgetDashboard() {
         String accountName = promptAccountSelection("Enter Account Name (e.g., Personal, College, Club):");
@@ -88,7 +88,7 @@ public class BudgetDashboard extends JFrame {
             UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
         } catch (Exception ignored) {}
 
-        setTitle("Personal Finance Dashboard - " + manager.getCurrentAccountName());
+        setTitle("Apex Budget Manager - " + manager.getCurrentAccountName());
         setSize(960, 650);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
@@ -297,7 +297,7 @@ public class BudgetDashboard extends JFrame {
         if (newAcc != null && !newAcc.trim().isEmpty()) {
             manager.switchAccount(newAcc.trim());
             accountBadgeLabel.setText("Account: " + manager.getCurrentAccountName());
-            setTitle("Personal Finance Dashboard - " + manager.getCurrentAccountName());
+            setTitle("Apex Budget Manager - " + manager.getCurrentAccountName());
             if (manager.getMonthlyBudget() <= 0) {
                 promptBudgetSetting();
             }
